@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Akbank Web3 Practicum</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body style="background: #f1f2f6;">
+    <div class="container">
+      <h1>Javascript_Odd or Even_First Case</h1>
+      <h2>Please Enter Your Value</h2>
+      <form>
+          <div class="form-group">
+            <label>Input:</label>
+            <input type="text" class="form-control" id="sayi" >
+          </div>
+          <div class="form-group">
+            <label>The sum of the digits of the number you entered:</label>
+            <input type="text" class="form-control" id="sonuc" >
+          </div>
+          <button id="btnsum" type="button" class="btn btn-primary">Sum</button>
+
+          <div id="sonuc2">
+            
+            <label>indicates whether the sum is odd or even:</label>
+          </div>
+
+          <button id="buton"  type="button" class="btn btn-danger" >Submit</button>
+
+  
+        </form>
+    </div>
+   
+    <script>
+        var sayi=document.querySelector("#sayi");
+        var sonuc=document.querySelector("#sonuc");
+        var btnsum=document.querySelector("#btnsum");
+        
+        btnsum.onclick=function(){
+            var adet = 0,toplam=0;
+            var num=Number(sayi.value);
+            console.log(num);
+            while(num != 0)
+            {
+               toplam=(num%10)+toplam;
+               num =Math.floor(num / 10);
+                ++adet;
+            }
+            
+            sonuc.value=toplam;
+            
+            function buton(){
+                
+            var sonuc=document.getElementById("sonuc").value;
+            var sonuc2 = Number(sonuc);
+
+            if(sonuc2%2 == 0)
+            
+                alert( sonuc2 + " is even.")
+                
+            else
+            alert( sonuc2 + " is odd.")
+        }
+
+        var butonBtn=document.getElementById("buton");
+        butonBtn.onclick=buton;
+
+
+        } 
+
+    </script>
+        
+    </body>
+</html>
